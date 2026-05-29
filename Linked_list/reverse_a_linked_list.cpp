@@ -57,4 +57,29 @@ ListNode * reverse(ListNode* head){
 
 
 
+
+}
+
+ListNode * Reverse(ListNode * curr,ListNode * prev){
+    // base case
+
+    if(curr == nullptr){
+        return prev;
+
+    }
+
+    ListNode * fut;
+    fut = curr->next;
+    curr->next = prev;
+    return Reverse(fut,curr);
+
+
+}
+
+// by using recurison
+
+int main(){
+    
+
+
 }
