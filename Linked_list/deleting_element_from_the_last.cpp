@@ -8,6 +8,10 @@
  *     ListNode(int x, ListNode *next) : val(x), next(next) {}
  * };
  */
+
+
+
+ // brute force
 class Solution {
 public:
     ListNode* removeNthFromEnd(ListNode* head, int n) {
@@ -46,3 +50,6 @@ public:
     }
    
 };
+
+
+// slow and the fast poitner
