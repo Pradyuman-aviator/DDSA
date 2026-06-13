@@ -1,23 +1,27 @@
-// User function Template for C++
-
 class Solution {
   public:
-    int rotationCount(long long R, long long D) {
+    int assignHole(vector<int>& mices, vector<int>& holes) {
+        int n1 = mices.size();
+       
         
-        int ans = 0;
+        int ans = INT_MIN;
         
-        int first,second;
+        sort(mices.begin(),mices.end());
+        sort(holes.begin(),holes.end());
         
-        while(R){
-            first= R%10;
-            second = D%10;
-            
-            R/=10;
-            D/=10;
-            
-            ans += min(abs(first-second), 10-abs(first-second));
+        for(int i =0;i<n1;i++){
+            int time = abs(mices[i] - holes[i]);
+            ans=max(ans,time);
         }
         
+        
         return ans;
+        
+        
+        
+        
+
+
+
     }
 };
