@@ -107,3 +107,68 @@ public:
         return {num_jobs_done, total_profit};
     }
 };
+
+// this uper solution is also with TLE
+
+
+
+
+/// NOw thiis is the disjjoint set solution
+
+class Solution {
+public:
+
+    int find(int x, vector<int>& parent) {
+        if(x == parent[x])
+            return x;
+
+        return parent[x] = find(parent[x], parent);
+    }
+
+    vector<int> jobSequencing(vector<int>& deadline,
+                              vector<int>& profit) {
+
+        int n = deadline.size();
+
+        vector<pair<int,int>> jobs;
+
+        for(int i = 0; i < n; i++) {
+            jobs.push_back({deadline[i], profit[i]});
+        }
+
+        sort(jobs.begin(), jobs.end(),
+             [](auto &a, auto &b) {
+                 return a.second > b.second;
+             });
+
+        int mxDeadline = *max_element(deadline.begin(),
+                                      deadline.end());
+
+        vector<int> parent(mxDeadline + 1);
+
+        for(int i = 0; i <= mxDeadline; i++) {
+            parent[i] = i;
+        }
+
+        int num_jobs_done = 0;
+        int total_profit = 0;
+
+        for(auto &job : jobs) {
+
+            int d = job.first;
+            int p = job.second;
+
+            int slot = find(d, parent);
+
+            if(slot > 0) {
+
+                num_jobs_done++;
+                total_profit += p;
+
+                parent[slot] = find(slot - 1, parent);
+            }
+        }
+
+        return {num_jobs_done, total_profit};
+    }
+};
