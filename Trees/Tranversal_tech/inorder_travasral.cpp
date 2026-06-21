@@ -1,34 +1,45 @@
-#include<bits/stdc++.h>
+#include<bits\stdc++.h>
 using namespace std;
 
-class Node {
-    public:
+struct Node{
     int data;
     Node* left;
     Node* right;
 
-    Node(int x){
-        data = x;
-        left = right =NULL;
+    Node(int val){
+
+        data = val;
+        left=right=nullptr;
+
     }
+
+
+
 };
 
-void inOrder(Node* node,vector<int>& res){
+
+
+void inorder(Node* node,vector<int>& res){
     if(node == nullptr) return;
 
-    /// traversing the left subtree
-    inOrder(node->left,res);
-    /// visit the current node
+    inorder(node->left,res);
     res.push_back(node->data);
-    /// traverse the rihgt subtrre last 
-    inOrder(node->right, res);
+    inorder(node->right,res);
 
 
 }
 
+
 int main(){
-    Node* root = new Node(1);
+
+    Node* root= new Node(1);
+
     root->left = new Node(2);
+
+    root->right =  new Node(3);
+
+    vector<int> res;
+
     
 
 }

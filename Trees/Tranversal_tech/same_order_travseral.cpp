@@ -12,6 +12,7 @@ public:
         left = right = NULL;
     }
 };
+
 class Solution {
 public:
     vector<vector<int>> levelorder(TreeNode* root) {
