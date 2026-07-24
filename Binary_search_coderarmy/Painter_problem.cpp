@@ -1,3 +1,7 @@
+
+#include 
+
+
 class Solution {
   public:
     int minTime(vector<int>& arr, int k) {
