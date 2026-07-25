@@ -40,3 +40,5 @@ class Solution {
         return ans;
     }
 };
+
+//// this is the optimized o(nlogn) solution using the bianry search 
