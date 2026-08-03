@@ -21,3 +21,23 @@ public:
         
     }
 };
+
+
+/// Alternate solution thinking greedly
+
+class Solution {
+public:
+    int maximumDifference(vector<int>& nums) {
+        int mini =nums[0];
+        int ans =-1;
+/// can we amke profit if yes then do the operations
+        for (int i=1; i<nums.size();i++) {
+            if (nums[i]>mini)
+                ans = max(ans,nums[i]-mini);
+
+            mini=min(mini,nums[i]);
+        }
+
+        return ans;
+    }
+};
