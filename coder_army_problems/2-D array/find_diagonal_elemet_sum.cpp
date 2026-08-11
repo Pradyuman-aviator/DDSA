@@ -1,4 +1,4 @@
-=#include <bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
@@ -9,24 +9,32 @@ int main() {
         {9, 10, 11, 12}
     };
 
-    int maxSum = INT_MIN;
-    int max_index = -1;
+// so ww gonna reverse the row of the matrix like we do in normal array by taking the two arrays
 
-    for(int i = 0; i < 3; i++) {
+for(int i =0;i<3;i++){
+    int start= 0;
+    int end = 4-1;
 
-        int Sum = 0;   // reset for every row
+    while(start<end){
+       swap(arr1[i][start],arr1[i][end]); 
+       start++;
+       end--;
 
-        for(int j = 0; j < 4; j++) {
-            Sum += arr1[i][j];
-        }
-
-        if(Sum > maxSum) {
-            maxSum = Sum;
-            max_index = i;
-        }
     }
 
-    cout << max_index;
+
+}
+
+// printing the rows and columns 
+
+for(int  i =0;i<3;i++){
+    for(int j =0;j<4;j++){
+        cout <<  arr1[i][j] << "\n";
+
+    }
+}
+
+
 
     return 0;
 }
