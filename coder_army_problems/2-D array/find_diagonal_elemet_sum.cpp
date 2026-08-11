@@ -1,57 +1,32 @@
-class Solution {
-public:
-    int diagonalSum(vector<vector<int>>& mat) {
-        int n = mat.size();
+=#include <bits/stdc++.h>
+using namespace std;
 
-        int primary = 0;
-        int secondary = 0;
+int main() {
 
-        // Primary diagonal
-        for (int i = 0; i < n; i++) {
-            primary += mat[i][i];
+    int arr1[3][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12}
+    };
+
+    int maxSum = INT_MIN;
+    int max_index = -1;
+
+    for(int i = 0; i < 3; i++) {
+
+        int Sum = 0;   // reset for every row
+
+        for(int j = 0; j < 4; j++) {
+            Sum += arr1[i][j];
         }
 
-        // Secondary diagonal
-        int i = 0;
-        int j = n - 1;
-
-        while (i < n && j >= 0) {
-            secondary += mat[i][j];
-            i++;
-            j--;
+        if(Sum > maxSum) {
+            maxSum = Sum;
+            max_index = i;
         }
-
-        int total_sum = primary + secondary;
-
-        return total_sum;
     }
-};
 
+    cout << max_index;
 
-
-//// for the odd matricees
-
-
-class Solution {
-public:
-    int diagonalSum(vector<vector<int>>& mat) {
-        int n = mat.size();
-
-        int total = 0;
-
-        for (int i = 0; i < n; i++) {
-            // Primary diagonal
-            total += mat[i][i];
-
-            // Secondary diagonal
-            total += mat[i][n - 1 - i];
-        }
-
-        // If n is odd, center was counted twice
-        if (n % 2 == 1) {
-            total -= mat[n / 2][n / 2];
-        }
-
-        return total;
-    }
-};
+    return 0;
+}
