@@ -26,3 +26,32 @@ public:
         return total_sum;
     }
 };
+
+
+
+//// for the odd matricees
+
+
+class Solution {
+public:
+    int diagonalSum(vector<vector<int>>& mat) {
+        int n = mat.size();
+
+        int total = 0;
+
+        for (int i = 0; i < n; i++) {
+            // Primary diagonal
+            total += mat[i][i];
+
+            // Secondary diagonal
+            total += mat[i][n - 1 - i];
+        }
+
+        // If n is odd, center was counted twice
+        if (n % 2 == 1) {
+            total -= mat[n / 2][n / 2];
+        }
+
+        return total;
+    }
+};
