@@ -6,14 +6,14 @@ int main() {
 
     cin >> vertex >> edges;
 
-    vector<int>adjList[vertex];
+    vector<pair<int,int>>adjList[vertex];
 
     int u, v ,weight;
 
     for (int i = 0; i < edges; i++) {
         cin >> u >> v >> weight;
 
-        adjList[u].push_back(v);
+        adjList[u].push_back(make_pair(v,weight));
        
     }
 
@@ -22,7 +22,7 @@ int main() {
         cout << i << " -> ";
 
         for (int j = 0; j < adjList[i].size(); j++) {
-            cout << adjList[i][j];
+            cout << adjList[i][j].first << adjList[i][j].second;
         }
 
         cout << endl;
