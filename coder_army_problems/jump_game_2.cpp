@@ -23,3 +23,29 @@ public:
         
     }
 };
+
+//optimized
+
+
+        class Solution {
+public:
+    int jump(vector<int>& nums) {
+       int target = nums.size()-1;
+
+       int farthest =0;
+       int currentend =0;
+       int jumps =0;
+
+       for(int i=0;i<target;i++){
+        farthest =  max(farthest,i+nums[i]);
+
+        if(i == currentend){
+            currentend = farthest;
+            jumps++;
+            
+        }
+       }
+
+        return jumps;
+    }
+};
