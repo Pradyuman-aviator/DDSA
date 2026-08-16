@@ -33,3 +33,40 @@ public:
         return ans;
     }
 };
+
+/// more fkin brute force
+
+class Solution {
+public:
+    vector<int> dailyTemperatures(vector<int>& temperatures) {
+
+        int n = temperatures.size();
+
+        vector<int> ans(n, 0);
+
+        for(int i = 0; i < n; i++) {
+
+            if(temperatures[i] == 99) {
+                ans[i] = 0;
+                continue;
+            }
+
+            int today_temp = temperatures[i];
+            int days = 0;
+
+            for(int j = i + 1; j < n; j++) {
+
+                days++;
+
+                int current_temp = temperatures[j];
+
+                if(current_temp > today_temp) {
+                    ans[i] = days;
+                    break;
+                }
+            }
+        }
+
+        return ans;
+    }
+};
