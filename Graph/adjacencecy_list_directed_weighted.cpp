@@ -12,7 +12,6 @@ int main() {
 
     for (int i = 0; i < edges; i++) {
         cin >> u >> v >> weight;
-
         adjList[u].push_back(make_pair(v,weight));
         adjList[v].push_back(make_pair(u,weight));
     }
