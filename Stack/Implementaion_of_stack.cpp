@@ -5,12 +5,17 @@ class Stack
     int *arr;
     int size;
     int top;
+    
 public:
+
+
+bool Flag;
     Stack(int S)
     {
         size = S;
         top = -1;
         arr = new int[S];
+        Flag =1; // the stack is empty 
     }
     void push(int n)
     {
@@ -22,6 +27,7 @@ public:
 
         top++;
         arr[top] = n;
+        Flag = 0;
     }
     void pop()
     {
@@ -31,15 +37,18 @@ public:
             return;
         }
         top--;
+        if(top==-1){
+            Flag=1;
+        }
     }
-    void peek()
+    int peek()
     {
         if(top == -1)
         {
             cout << "Stack is Empty" << endl;
-            return;
+            return -1;
         }
-        cout << arr[top] << endl;
+        return arr[top];
     }
     bool is_empty()
     {
@@ -50,3 +59,32 @@ public:
         return top + 1;
     }
 };
+
+
+int main(){
+
+
+
+    Stack S(5);
+
+    S.push(-1);
+
+    int value =S.peek();
+
+    if(S.Flag==0){ // can be done through the Is_ empty() stuff
+        cout << value;
+    }
+
+
+
+
+ 
+
+    
+  
+
+
+
+
+
+}
