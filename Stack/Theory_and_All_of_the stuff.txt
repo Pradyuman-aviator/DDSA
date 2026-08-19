@@ -1,0 +1,9 @@
+What is Stack ? 
+ it is a linear data structres follows LIFO
+ have operations such as 
+
+Push()
+top()
+Pop()
+is_empty()
+size()
