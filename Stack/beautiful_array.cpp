@@ -10,7 +10,7 @@ public:
             else if ((s.top() >= 0 && x < 0) ||
                      (s.top() < 0 && x >= 0)) {
                 s.pop();
-            }
+        }
             else {
                 s.push(x);
             }
