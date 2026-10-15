@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Accenture Practice</title>
+
+    <style>
+        #box {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 3px solid black;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="box"></div>
+
+    <button id="changeBtn">Change Box</button>
+
+    <p id="message">Box is normal</p>
+
+    <script>
+        const btn = document.querySelector('#changeBtn')
+        const msg= document.querySelector('#message')
+        const box = document.querySelector('#box')
+
+
+        btn.addEventListener('click',function(){
+            box.style.backgroundColor = 'red'
+            box.style.border = '5px solid blue'
+            msg.textContent = 'Box changed!'
+        
+        })
+    </script>
+
+</body>
+</html>

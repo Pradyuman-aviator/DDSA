@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p> Select some text from here</p>
+
+    <script>
+        document.addEventListener('mouseup',function(){
+            const selection = window.getSelection()
+
+            console.log(selection.toString())
+        })
+    </script>
+
+    
+</body>
+</html>

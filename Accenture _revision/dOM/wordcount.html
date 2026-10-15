@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Text Counter</title>
+
+    <style>
+
+        textarea {
+            width: 400px;
+            height: 150px;
+            font-size: 18px;
+            padding: 10px;
+        }
+
+        p {
+            font-size: 18px;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <h1>Text Counter</h1>
+
+    <textarea
+        id="textBox"
+        maxlength="100"
+        placeholder="Write something here...">
+    </textarea>
+
+    <p id="characterCount">
+        Characters: 0 / 100
+    </p>
+
+    <p id="wordCount">
+        Words: 0
+    </p>
+
+
+    <script>
+
+        // Get the textarea
+        const textBox = document.getElementById("textBox");
+
+        // Get the paragraph which shows character count
+        const characterCount =
+            document.getElementById("characterCount");
+
+        // Get the paragraph which shows word count
+        const wordCount =
+            document.getElementById("wordCount");
+
+
+        // Run this code whenever the user types
+        textBox.addEventListener("input", function() {
+
+            // Get whatever the user has typed
+            const text = textBox.value;
+
+
+            // -------------------------
+            // CHARACTER COUNT
+            // -------------------------
+
+            const numberOfCharacters = text.length;
+
+            characterCount.textContent =
+                "Characters: " +
+                numberOfCharacters +
+                " / 100";
+
+
+            // -------------------------
+            // WORD COUNT
+            // -------------------------
+
+            let numberOfWords = 0;
+
+            // First remove spaces from beginning and end
+            const cleanedText = text.trim();
+
+
+            // If there is something written
+            if (cleanedText.length > 0) {
+
+                // Start by assuming there is one word
+                numberOfWords = 1;
+
+
+                // Check every character
+                for (let i = 0; i < cleanedText.length; i++) {
+
+                    // If we find a space,
+                    // another word has started
+                    if (cleanedText[i] === " ") {
+
+                        numberOfWords++;
+                    }
+                }
+            }
+
+
+            // Display the word count
+            wordCount.textContent =
+                "Words: " +
+                numberOfWords;
+
+        });
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+class Solution(object):
+    def isPalindrome(self, s):
+
+        st = s.lower()
+        stt=""
+    ## creatin a new string of only characters
+        for x in st:
+            if x.isalnum():
+                stt+=x
+
+
+        if stt == stt[::-1]:
+
+            return True
+
+        return False
+        
+
+
+        
+
+
+       
+        

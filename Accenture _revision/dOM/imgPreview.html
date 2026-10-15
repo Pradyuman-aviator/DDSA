@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Preview</title>
+
+    <style>
+        #preview {
+            width: 300px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Image Preview</h1>
+
+    <input type="file" id="imageInput">
+
+    <br>
+
+    <img id="preview">
+
+    <script>
+
+        let pre = document.querySelector("#preview")
+        let inp = document.querySelector("imageInput")
+        img.addEventListener('change'function(){
+        let imgPath = inp.files[0] // remmerb this  
+
+        // for peviewing creatina a  object uRL
+        let imageUrl = URL.createObjectURL(imgPath)
+
+        preview.src= imageUrl;
+
+        })
+
+
+
+
+
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,16 @@
+<img id="productImage" src="old.jpg" alt="Product">
+
+<button id="changeBtn">Change Image</button>
+
+
+
+
+<script>
+    const btn = document.querySelector('#changeBtn')
+    const imgg = document.querySelector('#productImage')
+
+    btn.addEventListener('click',function(){
+        imgg.src='new.jpg'
+    }
+    )
+</script>

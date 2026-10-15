@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>toggle buttoon</title>
+
+    <style>
+        body{
+            background-color: white;
+            color:black;
+        }
+        #changeColor{
+            background-color:black;
+            color:white;
+        }
+    </style>
+</head>
+
+<body>
+    <h1> This is My fkin toggle Button</h1>
+
+    <p id ="current"> Current Selected : White</p>
+    <button id ="changeColor">Dark mode</button>   
+
+    <script>
+      let btn = document.querySelector("#changeColor");
+let curr = document.querySelector("#current");
+let body = document.body;
+
+btn.addEventListener("click", function () {
+
+    if (body.style.backgroundColor == "white") {
+        body.style.backgroundColor = "black"
+    }
+    else {
+        body.style.backgroundColor = "white"
+        
+    }
+
+});
+    </script>
+
+
+</body>
+
+</html>

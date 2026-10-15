@@ -1,0 +1,34 @@
+<h2 class="title">Heading 1</h2>
+<h2 class="title">Heading 2</h2>
+<h2 class="title">Heading 3</h2>
+
+<button id="btn">Highlight</button>
+
+
+
+<script>
+
+    const cla = document.querySelectorAll('.class')
+    const btn =document.querySelector('#btn')
+
+    btn.addEventListener('click',function(){
+
+        cla.forEach(function(li,i){
+            if(i==0){
+                li.style.color = 'red'           
+            }
+            if(i==1){
+                li.style.color='blue'
+            }
+            if(i==2){
+                li.style.color='green'
+            }
+
+
+    })
+
+})
+
+
+
+</script>

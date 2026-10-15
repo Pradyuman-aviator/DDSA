@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navigation</title>
+
+    <style>
+
+        /* Normal screen */
+        #menu {
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Hide hamburger on large screen */
+        #hamburger {
+            display: none;
+        }
+
+        /* Small screen */
+        @media (max-width: 600px) {
+
+            /* Hide menu */
+            #menu {
+                display: none;
+            }
+
+            /* Show hamburger */
+            #hamburger {
+                display: block;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <button id="hamburger">☰</button>
+
+    <div id="menu">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Services</a>
+    </div>
+
+
+    <script>
+
+        let btn = document.querySelector("#hamburger");
+        let mnu = document.querySelector("#menu");
+
+        btn.addEventListener("click", function() {
+
+            mnu.style.display = "block";
+
+        });
+
+    </script>
+
+</body>
+</html>

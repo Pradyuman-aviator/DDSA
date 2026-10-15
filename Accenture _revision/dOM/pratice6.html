@@ -1,0 +1,18 @@
+<p id="message">Click the button</p>
+
+<button id="btn">Change</button>
+
+
+
+<script>
+    const msg = document.querySelector('#message')
+    const btn = document.querySelector('#btn')
+
+    btn.addEventListener('click',function(){
+        msg.textContent = 'Button clicked succesfuly'
+        msg.style.color='white'
+        msg.style.backgroundColor='blue'
+        
+
+    })
+</script>

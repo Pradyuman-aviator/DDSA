@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ColorSelector</title>
+
+
+</head>
+<body>
+
+<p id="message">Selected color: None</p>
+
+<button>Red</button>
+<button>Blue</button>
+<button>Green</button>
+<button>Yellow</button>
+
+
+<script>
+    let mess =  document.querySelector('#message')
+    let btn = document.querySelectorAll('button')
+
+    btn.forEach(function(li){
+        li.addEventListener('click',function(){
+            mess.textContent = "Selected Color" + li.textContent;
+            mess.style.color = li.textContent 
+        })
+
+
+    })
+
+
+</script>
+
+    
+</body>
+</html>
