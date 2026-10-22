@@ -3,7 +3,7 @@
 
 class Solution { 
 public: 
-    vector<int> nextGreater(vector<int> &arr) { 
+    ector<int> nextGreater(vector<int> &arr)v { 
         int n = arr.size(); 
         vector<int> ans(n, -1); // Initializing with "-1" 
 
