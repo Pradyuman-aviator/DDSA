@@ -1,3 +1,5 @@
+//pSRQ
+
 class Solution {
   public:
     vector<int> calculateSpan(vector<int>& arr) {
@@ -6,11 +8,13 @@ class Solution {
         vector<int> ans(n);
         
         stack<int> st;
+
+        ///try to dry run on the input
         
         for(int i=0;i<n;i++){
             
             while(!st.empty() && arr[st.top()] <=   arr[i]){
-                st.pop();
+                st.pop(); 
             }
             if(st.empty()){
                 ans[i] = i+1;
